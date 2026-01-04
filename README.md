@@ -72,3 +72,6 @@ python finetune_lora.py
 
 4️⃣ Test Fine-Tuned Model
 python test_finetuned.py
+
+
+Feel free to create your own datasets and fine tune according to your use case !
