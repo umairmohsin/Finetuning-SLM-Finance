@@ -61,16 +61,16 @@ Example:
 }
 
 # 🚀 How to Run
-1️⃣ Install Dependencies
+1️⃣ Install Dependencies -->
 pip install -r requirements.txt
 
-2️⃣ Test Base Model
+2️⃣ Test Base Model -->
 python test_base.py
 
-3️⃣ Fine-Tune with LoRA
+3️⃣ Fine-Tune with LoRA -->
 python finetune_lora.py
 
-4️⃣ Test Fine-Tuned Model
+4️⃣ Test Fine-Tuned Model -->
 python test_finetuned.py
 
 
