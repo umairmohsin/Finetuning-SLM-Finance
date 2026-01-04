@@ -3,11 +3,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments,
 from peft import LoraConfig, get_peft_model
 import torch
 
-# MODEL_NAME = "Qwen/Qwen3-0.6B"
-
 MODEL_NAME = r"D:\Models\Qwen3-0.6B"
 
-# Load tokenizer & model
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
 if tokenizer.pad_token is None:
@@ -18,7 +15,6 @@ model = AutoModelForCausalLM.from_pretrained(
     dtype=torch.float32,
 )
 
-# Load dataset
 dataset = load_dataset("json", data_files="data/train.jsonl")
 
 def format_example(example):
@@ -41,14 +37,13 @@ def tokenize(batch):
         padding="max_length",
         max_length=512,
     )
-    # The Trainer looks for the 'labels' key to calculate loss
     tokenized["labels"] = tokenized["input_ids"].copy()
     return tokenized
 
 dataset = dataset.map(tokenize, batched=True)
 dataset = dataset.remove_columns(["instruction", "input", "output", "text"])
-dataset.set_format("torch") # Optional: explicitly set to torch format
-# LoRA config
+dataset.set_format("torch") 
+
 lora_config = LoraConfig(
     r=8,
     lora_alpha=16,
@@ -82,3 +77,4 @@ trainer.train()
 
 model.save_pretrained("./lora_sama")
 tokenizer.save_pretrained("./lora_sama")
+
