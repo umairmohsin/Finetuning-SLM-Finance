@@ -1,8 +1,8 @@
-🏦 Fine-Tuned Small Language Model for SAMA & Basel (Financial Services)
+# 🏦 Fine-Tuned Small Language Model for SAMA & Basel (Financial Services)
 
-Domain-specific regulatory assistant fine-tuned on SAMA ICAAP guidelines using LoRA
+#Domain-specific regulatory assistant fine-tuned on SAMA ICAAP guidelines using LoRA
 
-📌 Overview
+Overview
 
 This project demonstrates end-to-end fine-tuning of a small open-source language model on financial services regulatory data.
 
@@ -16,7 +16,7 @@ Domain-specific explanations
 
 Built under CPU-only constraints, mirroring real enterprise prototyping.
 
-🎯 Business Use Case
+# 🎯 Business Use Case
 
 Internal AI assistant for banking consultants and risk teams
 
